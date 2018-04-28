@@ -1,0 +1,15 @@
+<mat-form-field class="date-select" fxFlex="43px" ng-if="selectedMonth">
+  <mat-select [(ngModel)]="selectedDate">
+    <mat-option *ngFor="let date of selectedMonth.dates | async" [value]="date">
+      {{ (date.toString().length == 1)? '0'+date : date }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field color="accent" fxFlex="1 0 100px" class="month-select" ng-if="iterableMonths">
+  <mat-select [(ngModel)]="selectedMonth" (change)="onMonthChange($event)">
+    <mat-option *ngFor="let month of iterableMonths | async" [value]="month">
+      {{ month.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

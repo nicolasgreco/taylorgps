@@ -1,0 +1,33 @@
+version: '2'
+services:
+  cache:
+    build: ./.docker/varnish/
+    links:
+      - reverse_proxy:varnish_backend
+    environment:
+      - VARNISH_PORT=8080
+      - VARNISH_BACKEND_PORT=80
+    logging:
+      driver: none
+    ports:
+      - 8080:8080
+  reverse_proxy:
+    build: ./.docker/nginx
+    links:
+      - node1:nginx_backend
+    environment:
+      - NGINX_BACKEND_PORT=4201
+      - STATIC_DIR=/opt/app/build/dist/
+    ports:
+      - 80:80
+    volumes_from:
+      - node1
+  node1:
+    build: ./
+    volumes:
+      - /opt/app/build/
+    environment:
+      - ENV=development
+    ports:
+      - 4201:4201
+    restart: always

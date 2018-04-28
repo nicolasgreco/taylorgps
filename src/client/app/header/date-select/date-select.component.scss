@@ -1,0 +1,21 @@
+:host ::ng-deep .mat-select-value{
+  font-size: 22px;
+}
+
+:host ::ng-deep .mat-input-underline{
+  display: none;
+}
+
+:host ::ng-deep .mat-select-value, :host ::ng-deep .mat-select-arrow{
+  color: white;
+}
+
+:host ::ng-deep .mat-input-infix{
+  padding: 10px 0 0 0;
+}
+
+:host .month-select{
+  padding-left: 16px;
+}
+
+

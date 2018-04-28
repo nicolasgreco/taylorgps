@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "lib": ["es2017", "dom"],
+    "mapRoot": "../../build/server",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "../../build/server",
+    "sourceMap": true,
+    "target": "es2017",
+    "typeRoots": ["../node_modules/@types"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  }
+}

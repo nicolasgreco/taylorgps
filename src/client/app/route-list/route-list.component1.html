@@ -1,0 +1,21 @@
+<div class="routes-list-container">
+
+  <div class="container" date="2018/04/22" *ngFor="let itinerary of itineraries">
+    <div class="month-title"  [hidden]="!itinerary.showMonth"><span class="h-line"></span><span class="label">{{itinerary.date | date:'MMM yyyy'}}</span></div>
+
+    <div class="date-content">
+      <div class="date-number">{{itinerary.date | date:'dd'}}</div>
+      <div class="date-label">{{(itinerary.date | date:'EEE').toLowerCase()}}.</div>
+    </div>
+
+    <ul class="routes-content">
+      <li *ngFor="let route of itinerary.routes; let last = last" [class.last-item]="last">
+        <h4>{{route.name}}</h4>
+        <p>From {{route.origin_name}} to {{route.destination_name}}</p>
+        <p>{{route.description}}</p>
+        <mat-icon>navigate_next</mat-icon>
+      </li>
+    </ul>
+  </div>
+  <div style="height: 100%"></div>
+</div>

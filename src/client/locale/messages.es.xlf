@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="faqTitle" datatype="html">
+        <source>FAQ</source>
+        <target>Preguntas Frequentes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/faq/faq.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqSubTitle" datatype="html">
+        <source>Cualquier duda o consulta que tengas podés contactarnos enviando un mail a 
+          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>nodeconfar@almundo.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+        </source>
+        <target>Cualquier duda o consulta que tengas podés contactarnos enviando un mail a 
+          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>nodeconfar@almundo.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/faq/faq.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqBuildSolutionQuestion" datatype="html">
+        <source>¿Cómo construyo mi solución?</source>
+        <target>¿Cómo construyo mi solución?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/faq/faq.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,112 @@
+<div class="route-detail mat-typography" *ngIf="routeDetail | async; let routeDetail; else loading">
+  <tg-header [fixed]="true" [background]="false" [back-url]="'/trips/'+tripId"></tg-header>
+  <section class="route-detail-header" tgShrink="{'offset': 245, 'host': '.route-detail'}" [style.background-image]="routeDetail.image == ''? url('/assets/mountain.jpg'):url(${routeDetail.image})">
+    <div class="float-header">
+      <h2 class="mat-title shrink-title">{{routeDetail.name}}</h2>
+      <ul>
+        <li>
+          <p class="label">345<span>km</span></p>
+          <span class="type">Disntace</span>
+        </li>
+        <li>
+          <p class="label">Paved</p>
+          <span class="type">Road type</span>
+        </li>
+        <li>
+          <p class="label">3<span>hs</span>22<span>min</span></p>
+          <span class="type">Avg. time</span>
+        </li>
+      </ul>
+    </div>
+    <div class="cover-border"></div>
+    <a class="go-button">
+      <mat-icon class="icon-map">map</mat-icon>
+    </a>
+  </section>
+
+  <section class="route-detail-description">
+    <p class="mat-body">{{routeDetail.information}}</p>
+
+  </section>
+
+  <section class="highlights">
+    <h3>HIGHLIGHTS</h3>
+  </section>
+
+  <section class="things-to-know">
+    <h3>THINGS TO KNOW</h3>
+    <mat-accordion>
+      <mat-expansion-panel  class="ttk-panel">
+        <mat-expansion-panel-header class="ttk-panel-header">
+          <mat-panel-title class="ttk-panel-title">
+            Documentation
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+        </p>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel  class="ttk-panel">
+        <mat-expansion-panel-header class="ttk-panel-header">
+          <mat-panel-title class="ttk-panel-title">
+            Fuel
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>{{routeDetail.fuel}}</p>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+  <section class="reviews">
+    <h3>REVIEWS</h3>
+    <ul>
+      <li>
+        <img>
+        <div class="content">
+          <div><span>Sandhy</span><div><mat-icon>star</mat-icon></div></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+      </li>
+      <li>
+        <img>
+        <div class="content">
+          <div><span>Sandhy</span><div><mat-icon>star</mat-icon></div></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+      </li>
+      <li>
+        <img>
+        <div class="content">
+          <div><span>Sandhy</span><div><mat-icon>star</mat-icon></div></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+      </li>
+      <li>
+        <img>
+        <div class="content">
+          <div><span>Sandhy</span><div><mat-icon>star</mat-icon></div></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+      </li>
+      <li>
+        <img>
+        <div class="content">
+          <div><span>Sandhy</span><div><mat-icon>star</mat-icon></div></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+<ng-template #loading>
+  <mat-progress-spinner
+    class="loading"
+    color="red"
+    mode="indeterminate" diameter="50">
+  </mat-progress-spinner>
+</ng-template>

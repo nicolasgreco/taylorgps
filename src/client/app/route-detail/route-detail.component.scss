@@ -1,0 +1,168 @@
+.route-detail{
+  color: white;
+  overflow-y: auto;
+  height: 100%;
+}
+
+section{
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+///////////////THINGS-TO-KNOW///////////
+.things-to-know{
+  .ttk-panel{
+    box-shadow: none;
+    margin-top: -12px;
+  }
+
+  .ttk-panel-header{
+    padding: 0;
+
+    &:hover{
+      background: none;
+    }
+  }
+
+  .ttk-panel-title{
+    color: #999;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+
+///////////////DETAIL-HEADER///////////
+.route-detail-header{
+  background: url("https://upload.wikimedia.org/wikipedia/commons/f/f9/Mount_Hood_Highway%2C_Oregon.jpg") no-repeat scroll center transparent;
+  background-size: cover;
+  height: 289px;
+  position: relative;
+  padding: 0;
+  border-bottom: none;
+
+  .cover-border{
+    background: linear-gradient(rgba(0,0,0,0) 69%, rgba(0,0,0, 0.63));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .go-button{
+    position: absolute;
+    z-index: 3;
+    right: 16px;
+    bottom: -26px;
+    text-align: center;
+    padding-top: 9px;
+    box-sizing: border-box;
+    height: 56px;
+    width: 56px;
+    border-radius: 56px;
+    background: white;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+
+    .icon-map{
+      height: 36px;
+      width: 36px;
+      font-size: 36px;
+      color:#F8545C;
+    }
+  }
+
+  ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    font-weight: 300;
+
+    li{
+      border-left: 1px solid #fff;
+      flex-basis: 33%;
+      max-width: 33%;
+      flex-grow: 1;
+
+      &:first-child{
+        border-left: none;
+      }
+    }
+  }
+
+  .mat-title{
+    font-size: 28px;
+  }
+
+  .label{
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    font-weight: 300;
+
+    span{
+      font-size: 14px;
+    }
+  }
+
+  .type{
+    font-size: 14px;
+    color: white;
+  }
+
+  .float-header{
+    color: white;
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 1px 0px 2px rgba(0,0,0,1);
+  }
+
+  .shrink-title{
+    transition: all 0.2s;
+  }
+
+  &.UP, &.DOWN{
+    .go-button{
+      position: fixed;
+      bottom: auto;
+      top: 15px;
+    }
+
+    .shrink-title{
+      background: #f9535b;
+      height: 55px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding-top: 13px;
+      font-size: 20px;
+      font-weight: 400;
+      text-shadow: none;
+      text-align: left;
+      padding-left: 60px;
+    }
+  }
+
+}
+///////////////DETAIL-DESCRIPTION///////////
+.route-detail-description{
+  background: #F8545C;
+  padding-top: 34px;
+
+  p{
+    color: white;
+    font-weight: 300;
+  }
+}

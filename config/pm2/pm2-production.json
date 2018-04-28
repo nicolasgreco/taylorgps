@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "am-nodeconf17",
+      "script": "/opt/app/build/server/bin/www.js",
+      "instances": "4",
+      "exec_mode": "cluster",
+      "max_memory_restart": "2G"
+    }
+  ]
+}

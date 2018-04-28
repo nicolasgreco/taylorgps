@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "tg-itinerary",
+      "script": "/opt/app/build/server/bin/www.js",
+      "instances": "1",
+      "exec_mode": "cluster",
+      "max_memory_restart": "2G",
+      "env": {
+        "DEBUG": "*"
+      }
+    }
+  ]
+}

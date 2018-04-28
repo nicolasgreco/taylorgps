@@ -1,0 +1,10 @@
+<header class="header" [class.fixed]="fixed" [class.background] = "background" [class.elevation]="elevation">
+  <div style="display: flex">
+    <mat-icon class="back-button" *ngIf="backUrl" [routerLink]="[backUrl]">arrow_back</mat-icon>
+    <span class="title">{{title}}</span>
+  </div>
+  <div class="context-menu" style="display: none">
+    <mat-icon >more_vert</mat-icon>
+  </div>
+</header>
+

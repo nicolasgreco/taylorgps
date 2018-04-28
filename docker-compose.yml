@@ -1,0 +1,32 @@
+version: '2'
+services:
+  cache:
+    image: gcr.io/taylorgps-198901/varnish:0.0.1
+    links:
+      - reverse_proxy:varnish_backend
+    environment:
+      - VARNISH_PORT=8080
+      - VARNISH_BACKEND_PORT=80
+    logging:
+      driver: none
+    ports:
+      - 8080:8080
+  reverse_proxy:
+    image: gcr.io/taylorgps-198901/nginx:0.0.1
+    links:
+      - node1:nginx_backend
+    environment:
+      - NGINX_BACKEND_PORT=4201
+      - STATIC_DIR=/opt/app/build/dist/
+    expose:
+      - 80:80
+    volumes_from:
+      - node1
+  node1:
+    image: gcr.io/taylorgps-198901/node:0.0.1
+    environment:
+      - ENV=production
+    volumes:
+      - /opt/app/build/
+    expose:
+      - 4201:4201

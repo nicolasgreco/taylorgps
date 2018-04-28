@@ -1,0 +1,51 @@
+
+header{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 55px;
+  width: 100%;
+  z-index: 9;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+  color: inherit;
+
+  &.fixed{
+    position: fixed;
+    top: 0;
+  }
+
+  &.elevation{
+    box-shadow: 0 0 13px rgba(0,0,0,.8);
+  }
+
+  &.background{
+    background: #F8545C;
+    color: white;
+  }
+
+  .title{
+    font-size: 20px;
+  }
+
+  .back-button{
+    margin: 0 21px 0 -4px;
+    cursor: pointer;
+  }
+
+  .context-menu-button{
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
+
+

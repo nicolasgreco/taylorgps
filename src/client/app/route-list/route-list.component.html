@@ -1,0 +1,41 @@
+<tg-header [title]="title" [fixed]="false" [background]="true" ></tg-header>
+
+<div class="download-shrink" *ngIf="monthYearGroup.length > 0" tgShrink="{'offset': 10, 'host': '.routes-list-container'}">
+  <span>Download maps</span>
+  <mat-slide-toggle [color]="'warn'"></mat-slide-toggle>
+</div>
+
+<div class="routes-list-container" *ngIf="monthYearGroup.length > 0; else loading">
+  <div class="container scroll-content"  *ngFor="let monthYearItem of monthYearGroup">
+    <div class="month-title"><span class="h-line"></span><span class="label">{{monthYearItem.date | date:'MMM yyyy'}}</span></div>
+
+    <div *ngFor="let itinerary of monthYearItem.itineraries; let lastParent = last" class="day-content">
+      <div class="date-content">
+        <div class="date-number">{{itinerary.date | date:'dd'}}</div>
+        <div class="date-label">{{(itinerary.date | date:'EEE').toLowerCase()}}.</div>
+      </div>
+
+      <ul class="routes-content">
+        <li *ngFor="let route of itinerary.routes; let last = last"
+            [class.last-item]="last && !lastParent"
+            [routerLink]="['routes', route.id +'-'+ route.url]">
+          <h3 class="mat-subheading-2">{{route.name}}</h3>
+          <p class="mat-body">From {{route.origin_name}} to {{route.destination_name}}</p>
+          <p class="mat-body">{{route.description}}</p>
+          <mat-icon>navigate_next</mat-icon>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="height: calc(100% - 137px)"></div>
+</div>
+
+<ng-template #loading>
+  <mat-progress-spinner
+    class="loading"
+    color="red"
+    mode="indeterminate" diameter="50">
+  </mat-progress-spinner>
+</ng-template>

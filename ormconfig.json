@@ -1,0 +1,13 @@
+{
+  "name": "local",
+  "type": "mssql",
+  "host": "184.168.194.77",
+  "port": 1433,
+  "username": "Taylor",
+  "password": "TaylorAB2015",
+  "database": "KallpaGPS_0",
+  "synchronize": false,
+  "entities": [
+    "build/server/api/**/*.entity.js"
+  ]
+}
